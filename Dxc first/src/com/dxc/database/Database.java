@@ -11,18 +11,18 @@ public class Database {
 public static void main(String[] args) throws Exception {
 
 	
-	Class.forName("com.mysql.jdbc.Driver");
-	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mypractises", "root", "root");
+	Class.forName("com.mysql.cj.jdbc.Driver");
+	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/contactdb", "root", "saiprathyusha@1910");
 
 	// Step 3
 
 	/**********************  Inserting Into DataBase  ***************************/
 	PreparedStatement stmtInsert = con.prepareStatement("insert into contact values(?,?,?,?,?)");
-	stmtInsert.setInt(1, 3);
-	stmtInsert.setString(2, "sakshi");
-	stmtInsert.setString(3, "949156787");
-	stmtInsert.setString(4, "sakshi@gmail.com");
-	stmtInsert.setString(5, "up");
+	stmtInsert.setInt(1, 2);
+	stmtInsert.setString(2, "dhoni");
+	stmtInsert.setString(3, "8008399179");
+	stmtInsert.setString(4, "dhoni@gmail.com");
+	stmtInsert.setString(5, "ranchi");
 	System.out.println(stmtInsert.executeUpdate() + " No of Records Inserted");
 }
 }
