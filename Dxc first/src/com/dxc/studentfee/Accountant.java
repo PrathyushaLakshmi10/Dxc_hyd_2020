@@ -106,7 +106,8 @@ public void duefees(BufferedReader buff)
 	{
 		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contactdb", "root", "saiprathyusha@1910");
 		Statement stmt = con.createStatement(); 
-		ResultSet rs =   stmt.executeQuery("select due from studentdb");
+		name=buff.readLine();
+		ResultSet rs =   stmt.executeQuery("select due from studentdb where name='"+name+"'" );
 		while(rs.next())
 			System.out.println("the due amount is: "+rs.getString(1));
 	}
